@@ -1,0 +1,26 @@
+<div ng-controller="FoodController">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Author</th>
+				<th>Rating</th>
+				<th>Category</th>
+			</tr>
+		</thead>
+
+
+		<tbody>
+			<tr ng-repeat="recipe in cookbook">
+				<td>{{recipe.name}}</td>
+				<td>{{recipe.author}}</td>
+				<td>{{recipe.Rating}}</td>
+				<td>{{recipe.category}}</td>
+
+			</tr>
+		</tbody>
+
+	</table>
+	<a href="#/food/new"><button type="button" class="btn btn-primary">Add Recipe</button></a>
+	
+</div>

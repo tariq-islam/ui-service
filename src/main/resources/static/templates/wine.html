@@ -1,0 +1,27 @@
+<div ng-controller="WineController">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Year</th>
+				<th>Vineyard</th>
+				<th>Varietal</th>
+			</tr>
+		</thead>
+
+
+		<tbody>
+			<tr ng-repeat="bottle in wines">
+				<td>{{bottle.name}}</td>
+				<td>{{bottle.year}}</td>
+				<td>{{bottle.vineyard}}</td>
+				<td>{{bottle.varietal}}</td>
+
+			</tr>
+		</tbody>
+
+	</table>
+	
+	<a href="#/wine/new"><button type="button" class="btn btn-primary">Add Wine</button></a>
+	
+</div>
