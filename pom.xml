@@ -6,7 +6,7 @@
 	<groupId>org.test</groupId>
 	<artifactId>AngularBoot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>ear</packaging>
 
 	<name>AngularBoot</name>
 	<description>Demo project for Spring Boot</description>
@@ -34,6 +34,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+	     <dependency>
+        		 <groupId>org.springframework.boot</groupId>
+        		 <artifactId>spring-boot-starter-tomcat</artifactId>
+     	    </dependency>
+
 	</dependencies>
 	
 	<build>
@@ -43,6 +48,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>ROOT</finalName>
 	</build>
 	
 
