@@ -29,7 +29,7 @@ public class EndpointsRestController {
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		HttpEntity<String> entity = new HttpEntity<String>(
 				wineParams.toString(), headers);
-		restTemplate.exchange("http://wine:8080/wine", HttpMethod.POST, entity,
+		restTemplate.exchange("http://wine-service:8080/wine", HttpMethod.POST, entity,
 				String.class);
 		return wineParams;
 	}
@@ -41,7 +41,7 @@ public class EndpointsRestController {
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		HttpEntity<String> entity = new HttpEntity<String>(
 				foodParams.toString(), headers);
-		restTemplate.exchange("http://food:8080/food", HttpMethod.POST, entity,
+		restTemplate.exchange("http://food-service:8080/food", HttpMethod.POST, entity,
 				String.class);
 		return foodParams;
 	}
@@ -50,7 +50,7 @@ public class EndpointsRestController {
 	public String getWines() {
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<String> responseEntity = restTemplate.getForEntity(
-				"http://wine:8080/wine", String.class);
+				"http://wine-service:8080/wine", String.class);
 		String wines = responseEntity.getBody();
 		return wines;
 
@@ -60,7 +60,7 @@ public class EndpointsRestController {
 	public String getFood() {
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<String> responseEntity = restTemplate.getForEntity(
-				"http://food:8080/food", String.class);
+				"http://food-service:8080/food", String.class);
 		String food = responseEntity.getBody();
 		return food;
 

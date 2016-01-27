@@ -7,10 +7,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+
 
 @SpringBootApplication
 @RestController
-public class AngularBootApplication {
+public class AngularBootApplication extends SpringBootServletInitializer {
 	
 	 @RequestMapping("/user")
 	  public Principal user(Principal user) {
@@ -24,6 +27,11 @@ public class AngularBootApplication {
 	    model.put("content", "Hello World");
 	    return model;
 	  }
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(AngularBootApplication.class);
+	}
 
     public static void main(String[] args) {
         SpringApplication.run(AngularBootApplication.class, args);
