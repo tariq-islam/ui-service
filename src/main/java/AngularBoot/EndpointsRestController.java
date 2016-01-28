@@ -24,9 +24,9 @@ public class EndpointsRestController {
 	private String wineService;
 	private String foodService;
  	public EndpointsRestController() {
- 		wineService = System.env("WINE_SERVICE");
+ 		wineService = System.getenv("WINE_SERVICE");
 		if (wineService == null) wineService = "wine-service";
-		foodService = System.env("FOOD_SERVICE");
+		foodService = System.getenv("FOOD_SERVICE");
 		if (foodService == null) foodService = "food-service";
 	}
 
